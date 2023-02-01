@@ -1,7 +1,8 @@
 import '../styles/Homepage.css'
 import pokemoncover from '../assets/pokemoncover.jpg'
-import marvelcover from '../assets/marvelcover.jpg'
+import animecover from '../assets/animecover.jpg'
 import harrypottercover from '../assets/harrypottercover.jpg'
+import GOTcover from '../assets/GOTcover.jpg'
 
 function Homepage() {
     return (
@@ -16,7 +17,7 @@ function Homepage() {
                         </div>
                         <div className="flip-card-back">
                             <h2>Pokemon Guessing game</h2>
-                            <a className="playlink" href='#'>Play game</a>
+                            <a className="playlink" href={"./pokemon"}>Play game</a>
                         </div>
                     </div>
                 </div>
@@ -24,11 +25,11 @@ function Homepage() {
                 <div className="flip-card">
                     <div className="flip-card-inner">
                         <div className="flip-card-front">
-                            <img className="coverimage" src={marvelcover} alt='Marvel couverture' />
+                            <img className="coverimage" src={animecover} alt='Marvel couverture' />
                         </div>
                         <div className="flip-card-back">
-                            <h2>Marvel Guessing game</h2>
-                            <a className="playlink" href='#'>Play game</a>
+                            <h2>Anime</h2>
+                            <a className="playlink" href={"./anime"}>Play game</a>
                         </div>
                     </div>
                 </div>
@@ -36,11 +37,11 @@ function Homepage() {
                 <div className="flip-card">
                     <div className="flip-card-inner">
                         <div className="flip-card-front">
-                            <img className="coverimage" src={harrypottercover} alt='Harry Potter couverture' />
+                            <img className="coverimage" src={GOTcover} alt='Game of Thrones couverture' />
                         </div>
                         <div className="flip-card-back">
-                            <h2>Harry Potter Guessing game</h2>
-                            <a className="playlink" href='#'>Play game</a>
+                            <h2>Game Of Thrones</h2>
+                            <a className="playlink" href={"./GOT"}>Play game</a>
                         </div>
                     </div>
                 </div>

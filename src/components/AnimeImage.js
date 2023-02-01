@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/Anime.css'
 
 const AnimeImage = () => {
   const [anime, setAnime] = useState({});
@@ -44,8 +45,8 @@ const AnimeImage = () => {
   };
 
   return (
-    <div>
-      {anime ? <img src={anime} alt="Pokemon sprite" /> : <p>Loading...</p>}
+    <div className='animecontainer'>
+      {anime ? <img className='animeimg' src={anime} alt="Anime image" /> : <p>Loading...</p>}
       <br />
       <form onSubmit={handleSubmit}>
         <input
@@ -54,13 +55,11 @@ const AnimeImage = () => {
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Guess the anime"
         />
-        <br />
         <button type="submit">Submit</button>
       </form>
-      <br />
       {result ? <p>{result}</p> : null}
-      <p>Score: {score}</p>
-      <p>Lifepoints: {lifepoints}</p>
+      <p className='iconcontainer'><img className='hpicon'src='https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png' height='20'></img>: {lifepoints}</p>
+      <p className='scoring'>Score: {score}</p>
     </div>
   );
 };
