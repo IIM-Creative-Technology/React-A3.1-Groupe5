@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/GOT.css'
 
 const GOTCard = () => {
   const [imageUrl, setimageUrl] = useState(null);
@@ -41,8 +42,8 @@ const GOTCard = () => {
   };
 
   return (
-    <div>
-      {imageUrl ? <img src={imageUrl} alt="imageUrl" /> : <p>Loading...</p>}
+    <div className='gotcontainer'>
+      {imageUrl ?  <img className='gotimg'src={imageUrl} alt="imageUrl" /> : <p>Loading...</p>}
       <br />
       <form onSubmit={handleSubmit}>
         <input
@@ -52,12 +53,14 @@ const GOTCard = () => {
           placeholder="nom complet de la personne"
         />
         <br />
-        <button type="submit">Submit</button>
+        <center><button type="submit">Envoyer</button></center>
       </form>
       <br />
       {result ? <p>{result}</p> : null}
-      <p>Score: {score}</p>
-      <p>Lifepoints: {lifepoints}</p>
+      <br />
+      <p className='iconcontainer'><img className='hpicon'src='https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png' height='20'></img>: {lifepoints}</p>
+      <br></br>
+      <p className='scoring'>Score : {score}</p>
     </div>
   );
 };
