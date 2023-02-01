@@ -1,0 +1,27 @@
+.pokecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(../assets/pokemonbackground.jpg);
+    background-size: cover;
+}
+
+.pokeimg {
+    height: 30vh;
+}
+
+.iconcontainer {
+    position: relative;
+    
+}
+
+.hpicon {
+    position: absolute;
+    right: 20px;
+}
+
+.scoring {
+    font-size: larger;
+}
