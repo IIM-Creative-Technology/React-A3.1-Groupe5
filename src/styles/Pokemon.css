@@ -39,3 +39,10 @@
     padding: 5px;
     border-radius: 10px;
 }
+
+.returnarrow {
+    height: 50px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Pokemon.css'
+import arrow from '../assets/returnarrow.png'
 
 const PokemonSprite = () => {
   const [sprite, setSprite] = useState(null);
@@ -60,6 +61,7 @@ const PokemonSprite = () => {
       <p className='iconcontainer'><img className='hpicon'src='https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png' height='20'></img>: {lifepoints}</p>
       <br></br>
       <p className='scoring'>Score: {score}</p>
+      <a href={"./"}><img className="returnarrow" src={arrow}></img></a>
     </div>
   );
 };
