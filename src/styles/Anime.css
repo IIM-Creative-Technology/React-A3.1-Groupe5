@@ -1,14 +1,14 @@
-.pokecontainer {
+.animecontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url(../assets/pokemonbackground.jpg);
+    background-image: url(../assets/animebackground.jpg);
     background-size: cover;
 }
 
-.pokeimg {
+.animeimg {
     height: 30vh;
 }
 
@@ -24,18 +24,4 @@
 
 .scoring {
     font-size: larger;
-}
-
-
-.submitbutton {
-    background-color: red;
-    padding: 5px;
-    border-radius: 10px;
-    color: white;
-
-}
-
-.answerinput {
-    padding: 5px;
-    border-radius: 10px;
 }

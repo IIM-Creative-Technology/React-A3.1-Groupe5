@@ -47,12 +47,13 @@ const PokemonSprite = () => {
       <br />
       <form onSubmit={handleSubmit}>
         <input
+          className='answerinput'  
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Guess the Pokémon name"
         />  
-        <button type="submit">Submit</button>
+        <button className='submitbutton' type="submit">Submit</button>
       </form>
       <br />
       {result ? <p>{result}</p> : null}
