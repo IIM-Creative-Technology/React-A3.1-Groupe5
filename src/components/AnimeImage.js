@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Anime.css'
 import arrow from '../assets/returnarrow.png'
+import PopUp from './PopUp';
 
 const AnimeImage = () => {
   const [anime, setAnime] = useState({});
@@ -9,6 +10,7 @@ const AnimeImage = () => {
   const [result, setResult] = useState(null);
   const [score, setScore] = useState(0);
   const [lifepoints, setLifepoints] = useState(3);
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     const fetchAnime = async () => {
@@ -23,6 +25,7 @@ const AnimeImage = () => {
 
     fetchAnime();
   }, []);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,10 +43,18 @@ const AnimeImage = () => {
       setanimeName(data.data.title);
       setInputValue('');
     } else if (lifepoints === 1) {
-      setScore(0);
-      setLifepoints(3);
+      setGameOver(true);
+      
     }
   };
+
+  const resetGame = () => {
+    setScore(0);
+    setLifepoints(3);
+    setGameOver(false);
+  };
+
+  
 
   return (
     <div className='animecontainer'>
@@ -57,14 +68,19 @@ const AnimeImage = () => {
           placeholder="Guess the anime"
         />
         <button type="submit">Submit</button>
-      </form>
-      {result ? <p>{result}</p> : null}
-      <p className='iconcontainer'><img className='hpicon'src='https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png' height='20'></img>: {lifepoints}</p>
-      <p className='scoring'>Score: {score}</p>
-      <a href={"./"}><img className="returnarrow" src={arrow}></img></a>
+</form>
+{result ? <p>{result}</p> : null}
+  <p className='iconcontainer'><img className='hpicon'src='https://cdn.pixabay.com/photo/2017/09/23/16/33/pixel-heart-2779422_1280.png' height='20'></img>: {lifepoints}</p>
+  <p className='scoring'>Score: {score}</p>
+<a href={"./"}><img className="returnarrow" src={arrow}></img></a>
+{lifepoints === 0 && (
+    <div className="game-over-popup">
+      <p>Game Over</p>
+      <p>Final Score: {score}</p>
     </div>
-  );
+  )}
+</div>
+);
 };
-
 
 export default AnimeImage;
